@@ -2,6 +2,10 @@ Jake O'Neill
 cmpm 121
 Color Blinders
 
+Progress update video
+
+https://www.youtube.com/watch?v=VNURJno18Nc&feature=youtu.be
+
 What was completed as planned
 
 -Code -create player movement system (moving and jump/ double jump)
