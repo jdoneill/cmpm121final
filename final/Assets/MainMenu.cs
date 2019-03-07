@@ -9,8 +9,10 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     public void gameStart()
     {
-
         SceneManager.LoadScene("tutorial");
-
+    }
+    public void startMenu()
+    {
+        SceneManager.LoadScene("startMenu");
     }
 }

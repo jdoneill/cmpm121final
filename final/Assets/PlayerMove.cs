@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
 
     //player movement vars
     public CharacterController player;
+    public GameObject UserInterface;
+    public GameObject gameOver;
     float speed;//speed of player
     float jump = 6;//height to jump on space
     bool doubleJump;
@@ -21,6 +23,10 @@ public class PlayerMove : MonoBehaviour
         doubleJump = true;
         singleJump = true;
         speed = 6;
+        UserInterface.GetComponent<Canvas>().enabled = true;
+        gameOver.GetComponent<Canvas>().enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,7 +35,12 @@ public class PlayerMove : MonoBehaviour
         {
             //Make a game over screen w/ restart and quit insted of hard reset
             Debug.Log("It BuRnS!!!");
-            SceneManager.LoadScene("startMenu");//restart level
+            UserInterface.GetComponent<Canvas>().enabled = false;
+            gameOver.GetComponent<Canvas>().enabled = true;
+            Time.timeScale = 0;
+            //    SceneManager.LoadScene("startMenu");//restart level
+            Cursor.lockState = CursorLockMode.None;
+
 
         }
     }
