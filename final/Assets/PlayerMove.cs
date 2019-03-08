@@ -16,6 +16,9 @@ public class PlayerMove : MonoBehaviour
     bool singleJump;
     private Vector3 move;
     private Vector3 startPos;
+    public float wallJumpForce = 3;
+    public float wallJumpTime = 1;
+    private float walJumpCounter;
 
     void Start()
     {//initialize stuff
@@ -25,22 +28,19 @@ public class PlayerMove : MonoBehaviour
         speed = 6;
         UserInterface.GetComponent<Canvas>().enabled = true;
         gameOver.GetComponent<Canvas>().enabled = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;// no cursor during gameplay
         Time.timeScale = 1;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Lava")//if the player dies
+        if (other.tag == "Lava")//if the player hits lava - GAME OVER
         {
             //Make a game over screen w/ restart and quit insted of hard reset
-            Debug.Log("It BuRnS!!!");
             UserInterface.GetComponent<Canvas>().enabled = false;
             gameOver.GetComponent<Canvas>().enabled = true;
             Time.timeScale = 0;
-            //    SceneManager.LoadScene("startMenu");//restart level
-            Cursor.lockState = CursorLockMode.None;
-
+            Cursor.lockState = CursorLockMode.None;// make the mouse usable
 
         }
     }
@@ -53,11 +53,12 @@ public class PlayerMove : MonoBehaviour
         if (player.isGrounded)
         {
             speed = 6;
-            move.y = 0;
+            move.y = 0;// this may be unnecessary
             doubleJump = true;
             singleJump = true;
         }
 
+        if(walJumpCounter <= 0){
 
         move = (transform.forward * Input.GetAxis("Vertical")) //move logic inputs
              + (transform.right * Input.GetAxis("Horizontal")
@@ -77,8 +78,43 @@ public class PlayerMove : MonoBehaviour
             doubleJump = false;
         }
 
+        
+        }
+        else{
+            walJumpCounter -= Time.deltaTime;
+        }
+    
+
         move.y = move.y + (Physics.gravity.y * Time.deltaTime * gravMod);//add gravity
         player.Move(move * Time.deltaTime);//move the player
+
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (!player.isGrounded)
+        {
+            //doubleJump = true;
+            //singleJump = true;
+            
+            if (Input.GetKeyDown(KeyCode.Space))//press space to wall jump
+            {
+                wallJump(hit.normal);
+            }
+            
+        }    
+    }
+
+    private void wallJump(Vector3 dir)//wall jump logic
+    {
+        walJumpCounter = wallJumpTime;
+        dir = dir.normalized;
+        dir.y = 0;//remove jump so we can add it later
+
+        move = ((player.transform.forward * Input.GetAxis("Vertical"))//move forward if input
+                + dir) * wallJumpForce;//bounce away from the wall
+        move.y = jump;//hippity hop
+
 
     }
 }

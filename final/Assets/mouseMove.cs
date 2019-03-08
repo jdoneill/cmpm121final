@@ -38,14 +38,14 @@ public class mouseMove : MonoBehaviour
         Quaternion camRot = Quaternion.Euler(-xAngle, yAngle, 0);
         transform.position = player.position - (camRot * camPos);
 
-        /*
-        if (transform.position.y < player.position.y + .4f)
+        
+        if (transform.position.y < 1)
         {
             transform.position = new Vector3(transform.position.x,
-                                             player.position.y + .4f,
+                                             1,
                                              transform.position.z);
         }
-        */
+        
 
         //transform.position = player.position - camPos;
         transform.LookAt(player.position); // + Vector3.up);
