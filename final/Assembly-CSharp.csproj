@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\ColorSwap.cs" />
     <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\mouseMove.cs" />
     <Compile Include="Assets\PlayerMove.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/jixxi/Desktop/cmpm121/final/final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
