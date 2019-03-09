@@ -14,16 +14,18 @@ public class PlayerMove : MonoBehaviour
     float jump = 6;//height to jump on space
     bool doubleJump;
     bool singleJump;
+    private bool wallJumped;
     private Vector3 move;
     private Vector3 startPos;
-    public float wallJumpTime = .25f;
-    private float walJumpCounter;
+    //public float wallJumpTime = 10;
+    //private float walJumpCounter;
 
     void Start()
     {//initialize stuff
         player = GetComponent<CharacterController>();
         doubleJump = true;
         singleJump = true;
+        wallJumped = false;
         speed = 8;
         UserInterface.GetComponent<Canvas>().enabled = true;
         gameOver.GetComponent<Canvas>().enabled = false;
@@ -54,19 +56,23 @@ public class PlayerMove : MonoBehaviour
             move.y = 0;// this may be unnecessary
             doubleJump = true;
             singleJump = true;
+            wallJumped = false;
         }
 
-        if(walJumpCounter <= 0){//maintain velocity after jumping off wall
+        if(!wallJumped){//maintain velocity after jumping off wall
 
         move = (transform.forward * Input.GetAxis("Vertical")) //move logic inputs
              + (transform.right * Input.GetAxis("Horizontal")
              );
 
         }
+
+        /*
         else
         {
             walJumpCounter -= Time.deltaTime;
         }
+        */
 
         move = move.normalized * speed;// make it so you can't game the game
         move.y = yVel;// maintain y velocity
@@ -108,7 +114,8 @@ public class PlayerMove : MonoBehaviour
     private void wallJump(Vector3 dir)//wall jump logic
     {
 
-        walJumpCounter = wallJumpTime;
+        //walJumpCounter = wallJumpTime;
+        wallJumped = true;
         dir = dir.normalized;
         dir.y = 0;//remove jump so we can add it later
 

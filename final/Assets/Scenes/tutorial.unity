@@ -910,12 +910,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2613383648213272606, guid: 154bc97de396dfd4cb5a5cab55534d13,
+    - target: {fileID: 2613383647661084535, guid: 154bc97de396dfd4cb5a5cab55534d13,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1090161564}
-    - target: {fileID: 2613383647661084535, guid: 154bc97de396dfd4cb5a5cab55534d13,
+    - target: {fileID: 2613383648213272606, guid: 154bc97de396dfd4cb5a5cab55534d13,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1034,6 +1034,16 @@ PrefabInstance:
       propertyPath: currentColor
       value: 
       objectReference: {fileID: 1117117241}
+    - target: {fileID: 6692372491185792320, guid: f110b6daa4f5e69418f39b7d48728f5c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a92d40151e79e4143aff7c670fb7681c, type: 2}
+    - target: {fileID: 6692372491185792322, guid: f110b6daa4f5e69418f39b7d48728f5c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a92d40151e79e4143aff7c670fb7681c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f110b6daa4f5e69418f39b7d48728f5c, type: 3}
 --- !u!1001 &8449526049294544281

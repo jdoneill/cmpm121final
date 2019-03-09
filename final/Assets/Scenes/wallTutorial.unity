@@ -440,6 +440,16 @@ PrefabInstance:
       propertyPath: BlueObjs
       value: 
       objectReference: {fileID: 2095335949}
+    - target: {fileID: 6692372491185792320, guid: f110b6daa4f5e69418f39b7d48728f5c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a92d40151e79e4143aff7c670fb7681c, type: 2}
+    - target: {fileID: 6692372491185792322, guid: f110b6daa4f5e69418f39b7d48728f5c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a92d40151e79e4143aff7c670fb7681c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f110b6daa4f5e69418f39b7d48728f5c, type: 3}
 --- !u!1001 &400484242
