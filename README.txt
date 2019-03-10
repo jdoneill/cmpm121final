@@ -4,21 +4,22 @@ Color Blinders
 
 Progress update video
 
-https://www.youtube.com/watch?v=VNURJno18Nc&feature=youtu.be
+https://www.youtube.com/watch?v=Xw-GV-2h15w&feature=youtu.be
 
 What was completed as planned
-
--Code -create player movement system (moving and jump/ double jump)
--Code -create color change system (change active platforms)
--Code/UI -start menu system (main-> game (adding more later))
--finish first working level (tutorial (not yet time based))
--Code/UI -create dynamic UI to show active color and give instructions for color changes
+-catch up on any unfinished work
+Code -refine controls
+-make player model
+-make platform model
+Code -create camera follow system (3rd person mouse based)
+Code/UI -add game over and level complete screens
+Code -implement wall jumps
+-make wall jump based level
+-add wall jump level 2
 
 What was not completed
+all week 2 goals were met, however the buttons on the level 2 UI don’t work yet
 
-all week 1 goals were met
-
-unexpected tasks
-
-I had to make empty onjects and child the proper platforms to each onject
-I had to make multiple cameras for the background color change (quick fix, looking for easier solutions)
+Unexpected tasks
+I had to try multiple different methods to get wall jumping to work
+I had to change the mouse based camera system multiple times because the camera kept starting under the platforms

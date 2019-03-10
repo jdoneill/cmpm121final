@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
@@ -17,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     private bool wallJumped;
     private Vector3 move;
     private Vector3 startPos;
+    public Text gameFinished;
     //public float wallJumpTime = 10;
     //private float walJumpCounter;
 
@@ -41,6 +43,15 @@ public class PlayerMove : MonoBehaviour
             gameOver.GetComponent<Canvas>().enabled = true;      //turn on gameover
             Time.timeScale = 0;//freeze time
             Cursor.lockState = CursorLockMode.None;// make the mouse usable
+
+        }
+        else if (other.tag == "Finish")//if the player hits lava - GAME OVER
+        {
+            UserInterface.GetComponent<Canvas>().enabled = false;//turn off UI
+            gameOver.GetComponent<Canvas>().enabled = true;      //turn on gameover
+            Time.timeScale = 0;//freeze time
+            Cursor.lockState = CursorLockMode.None;// make the mouse usable
+            gameFinished.text = "Level Complete!";
 
         }
     }

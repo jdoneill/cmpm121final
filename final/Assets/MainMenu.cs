@@ -7,12 +7,20 @@ public class MainMenu : MonoBehaviour
 {
 
     // Update is called once per frame
-    public void gameStart()
+    public void gameStart() // load first level
     {
         SceneManager.LoadScene("tutorial");
     }
-    public void startMenu()
+    public void startMenu() //load main menu
     {
         SceneManager.LoadScene("startMenu");
+    }
+    public void levelReset() //load current level
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void level2() // load first level
+    {
+        SceneManager.LoadScene("wallTutorial");
     }
 }
