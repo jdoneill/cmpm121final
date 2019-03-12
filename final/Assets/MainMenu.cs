@@ -6,20 +6,19 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    // Update is called once per frame
-    public void gameStart() // load first level
-    {
-        SceneManager.LoadScene("tutorial");
-    }
     public void startMenu() //load main menu
     {
         SceneManager.LoadScene("startMenu");
     }
-    public void levelReset() //load current level
+    public void restart() //load current level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void level2() // load first level
+    public void level1() // load level 1
+    {
+        SceneManager.LoadScene("tutorial");
+    }
+    public void level2() // load level 2
     {
         SceneManager.LoadScene("wallTutorial");
     }
