@@ -23,7 +23,7 @@ public class ColorSwap : MonoBehaviour
     {
         start = Camera.main;
         start.enabled = true;
-        colorSwitch(false, false, false);//make it RED
+        colorSwitch(false, false, false);
         currentColor.text = "Press R, G or B to activate different platforms!";
 
     }
