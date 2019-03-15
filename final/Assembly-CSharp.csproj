@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\ColorSwap.cs" />
     <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\menuMGR.cs" />
     <Compile Include="Assets\mouseMove.cs" />
     <Compile Include="Assets\PlayerMove.cs" />
     <Compile Include="Assets\timer.cs" />
