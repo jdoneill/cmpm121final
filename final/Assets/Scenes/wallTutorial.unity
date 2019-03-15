@@ -314,6 +314,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: restart
       objectReference: {fileID: 0}
+    - target: {fileID: 1534660462395150086, guid: 154bc97de396dfd4cb5a5cab55534d13,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 69.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534660462395150086, guid: 154bc97de396dfd4cb5a5cab55534d13,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 233
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154bc97de396dfd4cb5a5cab55534d13, type: 3}
 --- !u!114 &280006797 stripped
@@ -486,7 +496,7 @@ PrefabInstance:
         type: 3}
       propertyPath: BlueObjs
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2095335949}
     - target: {fileID: 6692372491185792320, guid: f110b6daa4f5e69418f39b7d48728f5c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
