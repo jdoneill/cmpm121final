@@ -1,25 +1,43 @@
-Jake O'Neill
-cmpm 121
-Color Blinders
+O’Neill, Jake
+CMPM 121
+
+Color Blinders! Week 3 Update
+Github link - https://github.com/jdoneill/cmpm121final
+
+Week 3 goals
+-catch up on any unfinished work
+Code -refine controls
+-make inactive platforms slightly transparent
+Code -make moving platforms
+Code/UI -add pause, settings (rescoped to instructions) and level select menus
+Code -add timer based color shifts
+-create time based level
+-refine tutorial into 3-4 levels 
+	-tutorial (time based change) (basic movement and game mechanic intro)
+	-color change tutorial (introduce color change mechanic) (give players more control)
+	-wall jump tutorial (introduce wall jump)
 
 Progress update video
-
-https://www.youtube.com/watch?v=Xw-GV-2h15w&feature=youtu.be
+https://www.youtube.com/watch?v=-BI4D8zAsh4&feature=youtu.be
 
 What was completed as planned
 -catch up on any unfinished work
 Code -refine controls
--make player model
--make platform model
-Code -create camera follow system (3rd person mouse based)
-Code/UI -add game over and level complete screens
-Code -implement wall jumps
--make wall jump based level
--add wall jump level 2
+-make inactive platforms slightly transparent
+Code -make moving platforms
+Code/UI -add pause, settings (rescoped to instructions) and level select menus
+Code -add timer based color shifts
+-create time based level
+-refine tutorial into 3-4 levels 
+	-tutorial (time based change) (basic movement and game mechanic intro)
+	-color change tutorial (introduce color change mechanic) (give players more control)
+	-wall jump tutorial (introduce wall jump)
 
 What was not completed
-all week 2 goals were met, however the buttons on the level 2 UI don’t work yet
+all week 3 goals were met, however stretch goals such as adding enemies were not met.
 
 Unexpected tasks
-I had to try multiple different methods to get wall jumping to work
-I had to change the mouse based camera system multiple times because the camera kept starting under the platforms
+I had to create an object to act as the level finisher that would send players to the start menu on collision
+I had to create multiple animations to complete the moving platform level
+I had to write extra menu logics scripts
+
