@@ -23,6 +23,7 @@ public class mouseMove : MonoBehaviour
 
     private void LateUpdate()
     {
+        camSpeed = (Time.timeScale == 1) ? 2 : 0;
 
         //find x pose and rotate target
         float xAxis = Input.GetAxis("Mouse X") * camSpeed;
@@ -51,4 +52,5 @@ public class mouseMove : MonoBehaviour
         transform.LookAt(player.position); // + Vector3.up);
 
     }
+
 }

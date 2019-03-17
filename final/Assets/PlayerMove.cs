@@ -19,8 +19,8 @@ public class PlayerMove : MonoBehaviour
     private Vector3 move;
     private Vector3 startPos;
     public Text gameFinished;
-    //public float wallJumpTime = 10;
-    //private float walJumpCounter;
+    private bool playing;
+    private bool ded;
 
     void Start()
     {//initialize stuff
@@ -33,6 +33,7 @@ public class PlayerMove : MonoBehaviour
         gameOver.GetComponent<Canvas>().enabled = false;
         Cursor.lockState = CursorLockMode.Locked;// no cursor during gameplay
         Time.timeScale = 1;
+        ded = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +44,8 @@ public class PlayerMove : MonoBehaviour
             gameOver.GetComponent<Canvas>().enabled = true;      //turn on gameover
             Time.timeScale = 0;//freeze time
             Cursor.lockState = CursorLockMode.None;// make the mouse usable
+            gameFinished.text = "Game Over";
+            ded = true;
 
         }
         else if (other.tag == "Finish")//if the player hits lava - GAME OVER
@@ -56,10 +59,28 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        playing = (Time.timeScale == 1) ? true : false;
+
+        if (Input.GetKeyDown(KeyCode.Tab) && !ded)
+        {
+            if (playing)
+            {
+                pause();
+            }
+            else
+            {
+                resume();
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         float gravMod = (player.isGrounded) ? 0 : 1.2f;
         float yVel = move.y;//store y velocity for jump/gravity
+
 
         if (player.isGrounded)
         {
@@ -78,12 +99,6 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        /*
-        else
-        {
-            walJumpCounter -= Time.deltaTime;
-        }
-        */
 
         move = move.normalized * speed;// make it so you can't game the game
         move.y = yVel;// maintain y velocity
@@ -100,7 +115,6 @@ public class PlayerMove : MonoBehaviour
         }
 
 
-    
 
         move.y = move.y + (Physics.gravity.y * Time.deltaTime * gravMod);//add gravity
         player.Move(move * Time.deltaTime);//move the player
@@ -135,4 +149,23 @@ public class PlayerMove : MonoBehaviour
         move.y = jump;//hippity hop
 
     }
+
+    public void pause()
+    {
+        UserInterface.GetComponent<Canvas>().enabled = false;//turn off UI
+        gameOver.GetComponent<Canvas>().enabled = true;      //turn on gameover
+        Time.timeScale = 0;//freeze time
+        Cursor.lockState = CursorLockMode.None;// make the mouse usable
+        gameFinished.text = "Paused";
+    }
+
+    public void resume()
+    {
+        Time.timeScale = 1;//unfreeze time
+        UserInterface.GetComponent<Canvas>().enabled = true;//turn on UI
+        gameOver.GetComponent<Canvas>().enabled = false;      //turn off gameover
+        Cursor.lockState = CursorLockMode.Locked;// make the mouse not usable
+
+    }
+
 }
