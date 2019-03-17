@@ -50,11 +50,27 @@ public class PlayerMove : MonoBehaviour
         }
         else if (other.tag == "Finish")//if the player hits lava - GAME OVER
         {
+
+            /*
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (SceneManager.sceneCount > nextSceneIndex)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                */
+
+            SceneManager.LoadScene("startMenu");
+            //}
+
+            /*
             UserInterface.GetComponent<Canvas>().enabled = false;//turn off UI
             gameOver.GetComponent<Canvas>().enabled = true;      //turn on gameover
             Time.timeScale = 0;//freeze time
             Cursor.lockState = CursorLockMode.None;// make the mouse usable
             gameFinished.text = "Level Complete!";
+            */
 
         }
     }

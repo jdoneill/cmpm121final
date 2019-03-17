@@ -14,6 +14,8 @@ public class menuMGR : MonoBehaviour
     void Start()
     {
         activeCanvas(true, false, false);
+        Cursor.lockState = CursorLockMode.None;// make the mouse usable
+
     }
 
     void activeCanvas(bool menu, bool controls, bool lvls)
